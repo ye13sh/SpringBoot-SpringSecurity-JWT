@@ -2,6 +2,7 @@ package com.PVR.CONTROLLER;
 
 import com.PVR.DTO.AuthDTO;
 import com.PVR.DTO.pvrDTO;
+import com.PVR.DTO.userDTO;
 import com.PVR.SERVICE.jwtService;
 import com.PVR.SERVICE.pvrService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,11 @@ public class pvrController {
     public ResponseEntity<pvrDTO> DeleteTicketByID(@RequestParam("id") int id){
         return ResponseEntity.ok(pService.DeleteTicketByID(id));
     }
+    @PostMapping("/new")
+    public ResponseEntity<userDTO> addUser(@RequestBody userDTO udto){
+        return ResponseEntity.ok(pService.addUser(udto));
+    }
+
     @RequestMapping("/authenticate")
     public String authenticate(@RequestBody AuthDTO authDTO){
         Authentication authentication= manager.authenticate(new UsernamePasswordAuthenticationToken(authDTO.getUsername(),authDTO.getPassword()));
