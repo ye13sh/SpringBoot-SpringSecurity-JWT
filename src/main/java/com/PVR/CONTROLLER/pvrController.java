@@ -42,6 +42,18 @@ public class pvrController {
     public ResponseEntity<userDTO> InsertUser(@RequestBody userDTO udto){
         return ResponseEntity.ok(pService.InsertUser(udto));
     }
+    @GetMapping("/getUser")
+    public ResponseEntity<userDTO> GetUserByID(@RequestParam("id") int id){
+        return ResponseEntity.ok(pService.GetUserByID(id));
+    }
+    @PutMapping("/updateUser")
+    public ResponseEntity<userDTO> UpdateUserByID(@RequestParam("id") int id){
+        return ResponseEntity.ok(pService.UpdateUserByID(id));
+    }
+    @DeleteMapping("/deleteUser")
+    public ResponseEntity<userDTO> DeleteUserByID(@RequestParam("id") int id){
+        return ResponseEntity.ok(pService.DeleteUserByID(id));
+    }
 
     @RequestMapping("/authenticate")
     public String authenticate(@RequestBody AuthDTO authDTO){
