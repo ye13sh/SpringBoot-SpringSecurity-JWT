@@ -39,8 +39,8 @@ public class pvrController {
         return ResponseEntity.ok(pService.DeleteTicketByID(id));
     }
     @PostMapping("/new")
-    public ResponseEntity<userDTO> addUser(@RequestBody userDTO udto){
-        return ResponseEntity.ok(pService.addUser(udto));
+    public ResponseEntity<userDTO> InsertUser(@RequestBody userDTO udto){
+        return ResponseEntity.ok(pService.InsertUser(udto));
     }
 
     @RequestMapping("/authenticate")

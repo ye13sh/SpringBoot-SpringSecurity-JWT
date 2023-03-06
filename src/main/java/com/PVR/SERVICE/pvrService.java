@@ -39,6 +39,7 @@ public class pvrService {
     }
 
     public userDTO InsertUser(userDTO dto){
+        dto.setPassword(passwordEncoder.encode(dto.getPassword()));
         return mapper.uDTO(repository.save(mapper.uEntity(dto)));
     }
     public userDTO GetUserByID(int id){
@@ -51,8 +52,4 @@ public class pvrService {
         return mapper.uDTO(repository.getReferenceById(id));
     }
 
-    public userDTO addUser(userDTO dto){
-         dto.setPassword(passwordEncoder.encode(dto.getPassword()));
-         return mapper.uDTO(repository.save(mapper.uEntity(dto)));
-    }
 }
