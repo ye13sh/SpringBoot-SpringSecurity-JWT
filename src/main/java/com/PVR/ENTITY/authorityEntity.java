@@ -1,23 +1,28 @@
 package com.PVR.ENTITY;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="authority")
 public class authorityEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     int id;
+
+    @Column(name="username")
     String username;
+    @Column(name="password")
     String password;
+    @Column(name="authority")
     String authority;
+    @Column(name="name")
     String name;
+    @Column(name="dob")
     String DOB;
+    @Column(name="email")
     String email;
+    @Column(name="mobile")
     String mobile;
 
     public int getId() {

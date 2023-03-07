@@ -1,13 +1,12 @@
 package com.PVR.ENTITY;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name="user")
 public class userEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false, updatable = false)
     int id;
     @Column(name="username", nullable = false, unique = true)
