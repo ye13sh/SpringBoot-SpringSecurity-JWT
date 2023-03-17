@@ -12,7 +12,7 @@ public class userMapper {
         entity.setUsername(uDto.getUsername());
         entity.setPassword(uDto.getPassword());
         entity.setName(uDto.getName());
-        entity.setDOB(uDto.getDOB());
+        entity.setDob(uDto.getDOB());
         entity.setEmail(uDto.getEmail());
         entity.setMobile(uDto.getMobile());
 
@@ -26,7 +26,7 @@ public class userMapper {
         dto.setUsername(entity.getUsername());
         dto.setPassword(entity.getPassword());
         dto.setName(entity.getName());
-        dto.setDOB(entity.getDOB());
+        dto.setDOB(entity.getDob());
         dto.setEmail(entity.getEmail());
         dto.setMobile(entity.getMobile());
 

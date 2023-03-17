@@ -1,24 +1,24 @@
 package com.PVR.ENTITY;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 
 @Entity
 @Table(name="pvr")
 public class pvrEntity {
     @Id
-    @Column(name="Theater_No")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="Theater_No",nullable = false,updatable = true)
     String TheaterNo;
-    @Column(name="Movie_Name")
+    @Column(name="Movie_Name",nullable = false)
     String movieName;
-    @Column(name="Seat_No")
+    @Column(name="Seat_No",nullable = false)
     String seatNo;
-    @Column(name="Show_Time")
+    @Column(name="Show_Time",nullable = false)
     String ShowTime;
-    @Column(name = "Show_Date")
+    @Column(name = "Show_Date",nullable = false)
     String showDate;
+    @Column(name="place",nullable = false)
     String place;
 
     public String getTheaterNo() {
@@ -69,15 +69,5 @@ public class pvrEntity {
         this.place = place;
     }
 
-    @Override
-    public String toString() {
-        return "pvrEntity{" +
-                "TheaterNo='" + TheaterNo + '\'' +
-                ", movieName='" + movieName + '\'' +
-                ", seatNo='" + seatNo + '\'' +
-                ", ShowTime='" + ShowTime + '\'' +
-                ", showDate='" + showDate + '\'' +
-                ", place='" + place + '\'' +
-                '}';
-    }
+
 }

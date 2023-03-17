@@ -15,6 +15,7 @@ public class UserDetailsUserInfo implements UserDetails {
     private String username;
     private String password;
     private List<GrantedAuthority> auth;
+
     public UserDetailsUserInfo(authorityEntity entity) {
         username=entity.getUsername();
         password=entity.getPassword();

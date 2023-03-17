@@ -5,7 +5,7 @@ public class userDTO {
     String username;
     String password;
     String name;
-    String DOB;
+    String dob;
     String email;
     String mobile;
 
@@ -42,11 +42,11 @@ public class userDTO {
     }
 
     public String getDOB() {
-        return DOB;
+        return dob;
     }
 
     public void setDOB(String DOB) {
-        this.DOB = DOB;
+        this.dob = DOB;
     }
 
     public String getEmail() {
@@ -72,7 +72,7 @@ public class userDTO {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", DOB='" + DOB + '\'' +
+                ", DOB='" + dob + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
                 '}';

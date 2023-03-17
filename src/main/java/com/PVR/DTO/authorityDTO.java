@@ -1,5 +1,6 @@
 package com.PVR.DTO;
 
+
 public class authorityDTO {
     int id;
     String username;

@@ -2,27 +2,27 @@ package com.PVR.ENTITY;
 
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name="authority")
 public class authorityEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id",nullable = false,updatable = false)
     int id;
 
-    @Column(name="username")
     String username;
-    @Column(name="password")
+
     String password;
-    @Column(name="authority")
+
     String authority;
-    @Column(name="name")
+
     String name;
-    @Column(name="dob")
+
     String DOB;
-    @Column(name="email")
+
     String email;
-    @Column(name="mobile")
+
     String mobile;
 
     public int getId() {
@@ -89,17 +89,4 @@ public class authorityEntity {
         this.mobile = mobile;
     }
 
-    @Override
-    public String toString() {
-        return "authorityEntity{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", authority='" + authority + '\'' +
-                ", name='" + name + '\'' +
-                ", DOB='" + DOB + '\'' +
-                ", email='" + email + '\'' +
-                ", mobile='" + mobile + '\'' +
-                '}';
-    }
 }

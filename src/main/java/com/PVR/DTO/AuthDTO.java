@@ -1,5 +1,6 @@
 package com.PVR.DTO;
 
+
 public class AuthDTO {
     public String username;
     public String password;
@@ -19,4 +20,5 @@ public class AuthDTO {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

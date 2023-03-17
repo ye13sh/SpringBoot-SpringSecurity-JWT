@@ -19,15 +19,13 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
-
-
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
     @Autowired
     private AuthFilter authFilter;
-    @Bean
+    @Bean //UserDetailsService is interface from  org.springframework.security.core.userdetails
    public UserDetailsService userDetailsService(){
         return new UserInfoDetailsService();
     }
@@ -38,7 +36,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable().authorizeHttpRequests().requestMatchers("/new","/authenticate").permitAll()
-                .and().authorizeHttpRequests().requestMatchers("/**").authenticated().and()
+                .and().authorizeHttpRequests().requestMatchers("/all/**").authenticated().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().
                 authenticationProvider(authpro()).addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class).build();
     }
