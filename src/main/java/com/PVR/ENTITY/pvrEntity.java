@@ -1,10 +1,18 @@
 package com.PVR.ENTITY;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Table(name="pvr")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
 public class pvrEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,53 +29,7 @@ public class pvrEntity {
     @Column(name="place",nullable = false)
     String place;
 
-    public String getTheaterNo() {
-        return TheaterNo;
-    }
 
-    public void setTheaterNo(String theaterNo) {
-        TheaterNo = theaterNo;
-    }
-
-    public String getMovieName() {
-        return movieName;
-    }
-
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
-    }
-
-    public String getSeatNo() {
-        return seatNo;
-    }
-
-    public void setSeatNo(String seatNo) {
-        this.seatNo = seatNo;
-    }
-
-    public String getShowTime() {
-        return ShowTime;
-    }
-
-    public void setShowTime(String showTime) {
-        ShowTime = showTime;
-    }
-
-    public String getShowDate() {
-        return showDate;
-    }
-
-    public void setShowDate(String showDate) {
-        this.showDate = showDate;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
 
 
 }
