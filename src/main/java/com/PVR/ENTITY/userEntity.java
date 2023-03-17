@@ -3,7 +3,7 @@ package com.PVR.ENTITY;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="user")
+@Table(name="users")// In postgres "user" is not allowed so I used "users"
 public class userEntity {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
